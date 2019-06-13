@@ -1,0 +1,16 @@
+时东阁	shidongge/shidongge
+吴昌霖	wuchanglin/wuchanglin
+杜江宇	dujiangyu/dujiangyu
+赵国桦	zhaoguohua/zhaoguohua
+刘泽华	liuzehua/liuzehua
+高文逸	gaowenyi/gaowenyi
+郝惠惠	haohuihui/haohuihui
+
+宁欣	ningxin/ningxin
+甘富文	ganfuwen/ganfuwen
+陈曦	chenxi/chenxi
+
+http://210.43.147.62/svn/MyProject/Radiomics/CloudEyes
+
+
+权限读写

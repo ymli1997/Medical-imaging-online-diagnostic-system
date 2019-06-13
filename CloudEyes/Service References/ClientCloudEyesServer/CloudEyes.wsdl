@@ -1,0 +1,1187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s1="http://tempuri.org/AbstractTypes" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="root">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="jsonData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="rootResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="rootResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllReport">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllReportResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReportsByAuditUserID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AuditUserID" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReportsByAuditUserIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReportsByAuditUserIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReportInfoByRetrieval">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retrievalMassage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReportInfoByRetrievalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReportInfoByRetrievalResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReportsByUserID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReportsByUserIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReportsByUserIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReportInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="report_Id" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReportInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReportInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="jsonData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendMessageResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sender_Id" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="receiver_Id" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMessageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="report_id" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="jsonData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UploadInfoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataAnalys">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="report_id" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataAnalysResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DataAnalysResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DicomUpload">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="jsonData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DicomUploadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DicomUploadResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fs" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="path" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UploadFileResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strFilePath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownloadFileResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="base64Binary" nillable="true" type="s:base64Binary" />
+    </s:schema>
+    <s:schema targetNamespace="http://tempuri.org/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="rootSoapIn">
+    <wsdl:part name="parameters" element="tns:root" />
+  </wsdl:message>
+  <wsdl:message name="rootSoapOut">
+    <wsdl:part name="parameters" element="tns:rootResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllReportSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllReport" />
+  </wsdl:message>
+  <wsdl:message name="GetAllReportSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReportsByAuditUserIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReportsByAuditUserID" />
+  </wsdl:message>
+  <wsdl:message name="GetReportsByAuditUserIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReportsByAuditUserIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReportInfoByRetrievalSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReportInfoByRetrieval" />
+  </wsdl:message>
+  <wsdl:message name="GetReportInfoByRetrievalSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReportInfoByRetrievalResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReportsByUserIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReportsByUserID" />
+  </wsdl:message>
+  <wsdl:message name="GetReportsByUserIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReportsByUserIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReportInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReportInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetReportInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReportInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMessage" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadInfo" />
+  </wsdl:message>
+  <wsdl:message name="UploadInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="DataAnalysSoapIn">
+    <wsdl:part name="parameters" element="tns:DataAnalys" />
+  </wsdl:message>
+  <wsdl:message name="DataAnalysSoapOut">
+    <wsdl:part name="parameters" element="tns:DataAnalysResponse" />
+  </wsdl:message>
+  <wsdl:message name="DicomUploadSoapIn">
+    <wsdl:part name="parameters" element="tns:DicomUpload" />
+  </wsdl:message>
+  <wsdl:message name="DicomUploadSoapOut">
+    <wsdl:part name="parameters" element="tns:DicomUploadResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadFile" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownloadFileSoapIn">
+    <wsdl:part name="parameters" element="tns:DownloadFile" />
+  </wsdl:message>
+  <wsdl:message name="DownloadFileSoapOut">
+    <wsdl:part name="parameters" element="tns:DownloadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="rootHttpGetIn">
+    <wsdl:part name="jsonData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="rootHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="LoginHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllReportHttpGetIn" />
+  <wsdl:message name="GetAllReportHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetReportsByAuditUserIDHttpGetIn">
+    <wsdl:part name="AuditUserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetReportsByAuditUserIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetReportInfoByRetrievalHttpGetIn">
+    <wsdl:part name="retrievalMassage" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetReportInfoByRetrievalHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetReportsByUserIDHttpGetIn">
+    <wsdl:part name="UserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetReportsByUserIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetReportInfoHttpGetIn">
+    <wsdl:part name="report_Id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetReportInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageHttpGetIn">
+    <wsdl:part name="jsonData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageHttpGetIn">
+    <wsdl:part name="sender_Id" type="s:string" />
+    <wsdl:part name="receiver_Id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UploadInfoHttpGetIn">
+    <wsdl:part name="report_id" type="s:string" />
+    <wsdl:part name="jsonData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UploadInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="DataAnalysHttpGetIn">
+    <wsdl:part name="report_id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DataAnalysHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DicomUploadHttpGetIn">
+    <wsdl:part name="jsonData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DicomUploadHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileHttpGetIn">
+    <wsdl:part name="fs" type="s1:StringArray" />
+    <wsdl:part name="path" type="s:string" />
+    <wsdl:part name="fileName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="DownloadFileHttpGetIn">
+    <wsdl:part name="strFilePath" type="s:string" />
+    <wsdl:part name="path" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadFileHttpGetOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="rootHttpPostIn">
+    <wsdl:part name="jsonData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="rootHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="LoginHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllReportHttpPostIn" />
+  <wsdl:message name="GetAllReportHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetReportsByAuditUserIDHttpPostIn">
+    <wsdl:part name="AuditUserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetReportsByAuditUserIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetReportInfoByRetrievalHttpPostIn">
+    <wsdl:part name="retrievalMassage" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetReportInfoByRetrievalHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetReportsByUserIDHttpPostIn">
+    <wsdl:part name="UserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetReportsByUserIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetReportInfoHttpPostIn">
+    <wsdl:part name="report_Id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetReportInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageHttpPostIn">
+    <wsdl:part name="jsonData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageHttpPostIn">
+    <wsdl:part name="sender_Id" type="s:string" />
+    <wsdl:part name="receiver_Id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UploadInfoHttpPostIn">
+    <wsdl:part name="report_id" type="s:string" />
+    <wsdl:part name="jsonData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UploadInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="DataAnalysHttpPostIn">
+    <wsdl:part name="report_id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DataAnalysHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DicomUploadHttpPostIn">
+    <wsdl:part name="jsonData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DicomUploadHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileHttpPostIn">
+    <wsdl:part name="fs" type="s1:StringArray" />
+    <wsdl:part name="path" type="s:string" />
+    <wsdl:part name="fileName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="DownloadFileHttpPostIn">
+    <wsdl:part name="strFilePath" type="s:string" />
+    <wsdl:part name="path" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadFileHttpPostOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:portType name="CloudEyesSoap">
+    <wsdl:operation name="root">
+      <wsdl:input message="tns:rootSoapIn" />
+      <wsdl:output message="tns:rootSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllReport">
+      <wsdl:input message="tns:GetAllReportSoapIn" />
+      <wsdl:output message="tns:GetAllReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportsByAuditUserID">
+      <wsdl:input message="tns:GetReportsByAuditUserIDSoapIn" />
+      <wsdl:output message="tns:GetReportsByAuditUserIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportInfoByRetrieval">
+      <wsdl:input message="tns:GetReportInfoByRetrievalSoapIn" />
+      <wsdl:output message="tns:GetReportInfoByRetrievalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportsByUserID">
+      <wsdl:input message="tns:GetReportsByUserIDSoapIn" />
+      <wsdl:output message="tns:GetReportsByUserIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportInfo">
+      <wsdl:input message="tns:GetReportInfoSoapIn" />
+      <wsdl:output message="tns:GetReportInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <wsdl:input message="tns:SendMessageSoapIn" />
+      <wsdl:output message="tns:SendMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <wsdl:input message="tns:GetMessageSoapIn" />
+      <wsdl:output message="tns:GetMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadInfo">
+      <wsdl:input message="tns:UploadInfoSoapIn" />
+      <wsdl:output message="tns:UploadInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataAnalys">
+      <wsdl:input message="tns:DataAnalysSoapIn" />
+      <wsdl:output message="tns:DataAnalysSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DicomUpload">
+      <wsdl:input message="tns:DicomUploadSoapIn" />
+      <wsdl:output message="tns:DicomUploadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <wsdl:input message="tns:UploadFileSoapIn" />
+      <wsdl:output message="tns:UploadFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">下载服务器站点文件，传递文件相对路径</wsdl:documentation>
+      <wsdl:input message="tns:DownloadFileSoapIn" />
+      <wsdl:output message="tns:DownloadFileSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="CloudEyesHttpGet">
+    <wsdl:operation name="root">
+      <wsdl:input message="tns:rootHttpGetIn" />
+      <wsdl:output message="tns:rootHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginHttpGetIn" />
+      <wsdl:output message="tns:LoginHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllReport">
+      <wsdl:input message="tns:GetAllReportHttpGetIn" />
+      <wsdl:output message="tns:GetAllReportHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportsByAuditUserID">
+      <wsdl:input message="tns:GetReportsByAuditUserIDHttpGetIn" />
+      <wsdl:output message="tns:GetReportsByAuditUserIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportInfoByRetrieval">
+      <wsdl:input message="tns:GetReportInfoByRetrievalHttpGetIn" />
+      <wsdl:output message="tns:GetReportInfoByRetrievalHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportsByUserID">
+      <wsdl:input message="tns:GetReportsByUserIDHttpGetIn" />
+      <wsdl:output message="tns:GetReportsByUserIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportInfo">
+      <wsdl:input message="tns:GetReportInfoHttpGetIn" />
+      <wsdl:output message="tns:GetReportInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <wsdl:input message="tns:SendMessageHttpGetIn" />
+      <wsdl:output message="tns:SendMessageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <wsdl:input message="tns:GetMessageHttpGetIn" />
+      <wsdl:output message="tns:GetMessageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadInfo">
+      <wsdl:input message="tns:UploadInfoHttpGetIn" />
+      <wsdl:output message="tns:UploadInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataAnalys">
+      <wsdl:input message="tns:DataAnalysHttpGetIn" />
+      <wsdl:output message="tns:DataAnalysHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DicomUpload">
+      <wsdl:input message="tns:DicomUploadHttpGetIn" />
+      <wsdl:output message="tns:DicomUploadHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <wsdl:input message="tns:UploadFileHttpGetIn" />
+      <wsdl:output message="tns:UploadFileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">下载服务器站点文件，传递文件相对路径</wsdl:documentation>
+      <wsdl:input message="tns:DownloadFileHttpGetIn" />
+      <wsdl:output message="tns:DownloadFileHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="CloudEyesHttpPost">
+    <wsdl:operation name="root">
+      <wsdl:input message="tns:rootHttpPostIn" />
+      <wsdl:output message="tns:rootHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginHttpPostIn" />
+      <wsdl:output message="tns:LoginHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllReport">
+      <wsdl:input message="tns:GetAllReportHttpPostIn" />
+      <wsdl:output message="tns:GetAllReportHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportsByAuditUserID">
+      <wsdl:input message="tns:GetReportsByAuditUserIDHttpPostIn" />
+      <wsdl:output message="tns:GetReportsByAuditUserIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportInfoByRetrieval">
+      <wsdl:input message="tns:GetReportInfoByRetrievalHttpPostIn" />
+      <wsdl:output message="tns:GetReportInfoByRetrievalHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportsByUserID">
+      <wsdl:input message="tns:GetReportsByUserIDHttpPostIn" />
+      <wsdl:output message="tns:GetReportsByUserIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportInfo">
+      <wsdl:input message="tns:GetReportInfoHttpPostIn" />
+      <wsdl:output message="tns:GetReportInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <wsdl:input message="tns:SendMessageHttpPostIn" />
+      <wsdl:output message="tns:SendMessageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <wsdl:input message="tns:GetMessageHttpPostIn" />
+      <wsdl:output message="tns:GetMessageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadInfo">
+      <wsdl:input message="tns:UploadInfoHttpPostIn" />
+      <wsdl:output message="tns:UploadInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataAnalys">
+      <wsdl:input message="tns:DataAnalysHttpPostIn" />
+      <wsdl:output message="tns:DataAnalysHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DicomUpload">
+      <wsdl:input message="tns:DicomUploadHttpPostIn" />
+      <wsdl:output message="tns:DicomUploadHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <wsdl:input message="tns:UploadFileHttpPostIn" />
+      <wsdl:output message="tns:UploadFileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">下载服务器站点文件，传递文件相对路径</wsdl:documentation>
+      <wsdl:input message="tns:DownloadFileHttpPostIn" />
+      <wsdl:output message="tns:DownloadFileHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CloudEyesSoap" type="tns:CloudEyesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="root">
+      <soap:operation soapAction="http://tempuri.org/root" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllReport">
+      <soap:operation soapAction="http://tempuri.org/GetAllReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportsByAuditUserID">
+      <soap:operation soapAction="http://tempuri.org/GetReportsByAuditUserID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportInfoByRetrieval">
+      <soap:operation soapAction="http://tempuri.org/GetReportInfoByRetrieval" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportsByUserID">
+      <soap:operation soapAction="http://tempuri.org/GetReportsByUserID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportInfo">
+      <soap:operation soapAction="http://tempuri.org/GetReportInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <soap:operation soapAction="http://tempuri.org/SendMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <soap:operation soapAction="http://tempuri.org/GetMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadInfo">
+      <soap:operation soapAction="http://tempuri.org/UploadInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataAnalys">
+      <soap:operation soapAction="http://tempuri.org/DataAnalys" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DicomUpload">
+      <soap:operation soapAction="http://tempuri.org/DicomUpload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <soap:operation soapAction="http://tempuri.org/UploadFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <soap:operation soapAction="http://tempuri.org/DownloadFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CloudEyesSoap12" type="tns:CloudEyesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="root">
+      <soap12:operation soapAction="http://tempuri.org/root" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllReport">
+      <soap12:operation soapAction="http://tempuri.org/GetAllReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportsByAuditUserID">
+      <soap12:operation soapAction="http://tempuri.org/GetReportsByAuditUserID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportInfoByRetrieval">
+      <soap12:operation soapAction="http://tempuri.org/GetReportInfoByRetrieval" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportsByUserID">
+      <soap12:operation soapAction="http://tempuri.org/GetReportsByUserID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetReportInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <soap12:operation soapAction="http://tempuri.org/SendMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <soap12:operation soapAction="http://tempuri.org/GetMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadInfo">
+      <soap12:operation soapAction="http://tempuri.org/UploadInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataAnalys">
+      <soap12:operation soapAction="http://tempuri.org/DataAnalys" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DicomUpload">
+      <soap12:operation soapAction="http://tempuri.org/DicomUpload" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <soap12:operation soapAction="http://tempuri.org/UploadFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <soap12:operation soapAction="http://tempuri.org/DownloadFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CloudEyesHttpGet" type="tns:CloudEyesHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="root">
+      <http:operation location="/root" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <http:operation location="/Login" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllReport">
+      <http:operation location="/GetAllReport" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportsByAuditUserID">
+      <http:operation location="/GetReportsByAuditUserID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportInfoByRetrieval">
+      <http:operation location="/GetReportInfoByRetrieval" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportsByUserID">
+      <http:operation location="/GetReportsByUserID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportInfo">
+      <http:operation location="/GetReportInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <http:operation location="/SendMessage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <http:operation location="/GetMessage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadInfo">
+      <http:operation location="/UploadInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataAnalys">
+      <http:operation location="/DataAnalys" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DicomUpload">
+      <http:operation location="/DicomUpload" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <http:operation location="/UploadFile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <http:operation location="/DownloadFile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CloudEyesHttpPost" type="tns:CloudEyesHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="root">
+      <http:operation location="/root" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <http:operation location="/Login" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllReport">
+      <http:operation location="/GetAllReport" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportsByAuditUserID">
+      <http:operation location="/GetReportsByAuditUserID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportInfoByRetrieval">
+      <http:operation location="/GetReportInfoByRetrieval" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportsByUserID">
+      <http:operation location="/GetReportsByUserID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportInfo">
+      <http:operation location="/GetReportInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <http:operation location="/SendMessage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <http:operation location="/GetMessage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadInfo">
+      <http:operation location="/UploadInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataAnalys">
+      <http:operation location="/DataAnalys" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DicomUpload">
+      <http:operation location="/DicomUpload" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <http:operation location="/UploadFile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <http:operation location="/DownloadFile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CloudEyes">
+    <wsdl:port name="CloudEyesSoap" binding="tns:CloudEyesSoap">
+      <soap:address location="http://[2001:da8:270:2021::f]:8080/CloudEyes.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CloudEyesSoap12" binding="tns:CloudEyesSoap12">
+      <soap12:address location="http://[2001:da8:270:2021::f]:8080/CloudEyes.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CloudEyesHttpGet" binding="tns:CloudEyesHttpGet">
+      <http:address location="http://[2001:da8:270:2021::f]:8080/CloudEyes.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CloudEyesHttpPost" binding="tns:CloudEyesHttpPost">
+      <http:address location="http://[2001:da8:270:2021::f]:8080/CloudEyes.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

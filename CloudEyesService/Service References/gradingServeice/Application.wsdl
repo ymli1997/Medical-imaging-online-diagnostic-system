@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12enc="http://www.w3.org/2003/05/soap-encoding" xmlns:soap11enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:plink="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:tns="spyne.examples.hello.soap" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:soap12env="http://www.w3.org/2003/05/soap-envelope" xmlns:soap11env="http://schemas.xmlsoap.org/soap/envelope/" name="Application" targetNamespace="spyne.examples.hello.soap" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="spyne.examples.hello.soap">
+      <xs:complexType name="stringArray">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="glioma_grading">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="image" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="mask" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="glioma_gradingResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="glioma_gradingResult" nillable="true" type="tns:stringArray" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="stringArray" type="tns:stringArray" />
+      <xs:element name="glioma_grading" type="tns:glioma_grading" />
+      <xs:element name="glioma_gradingResponse" type="tns:glioma_gradingResponse" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="glioma_grading">
+    <wsdl:part name="glioma_grading" element="tns:glioma_grading" />
+  </wsdl:message>
+  <wsdl:message name="glioma_gradingResponse">
+    <wsdl:part name="glioma_gradingResponse" element="tns:glioma_gradingResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Application">
+    <wsdl:operation name="glioma_grading" parameterOrder="glioma_grading">
+      <wsdl:input name="glioma_grading" message="tns:glioma_grading" />
+      <wsdl:output name="glioma_gradingResponse" message="tns:glioma_gradingResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Application" type="tns:Application">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="glioma_grading">
+      <soap:operation soapAction="glioma_grading" style="document" />
+      <wsdl:input name="glioma_grading">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="glioma_gradingResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GliomaGradingService">
+    <wsdl:port name="Application" binding="tns:Application">
+      <soap:address location="http://125.46.31.205:3002/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

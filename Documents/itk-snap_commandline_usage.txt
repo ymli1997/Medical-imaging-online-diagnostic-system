@@ -1,0 +1,33 @@
+使用示例
+ITK-SNAP.exe -g d:/1_0007358162_ET1.nii.gz -s d:/1_0007358162_ET1_seg1.nii.gz
+
+
+
+
+ITK-SnAP Command Line Usage:
+   " << progname << " [options] [main_image]
+Image Options:
+   -g FILE              : Load the main image from FILE                  //从文件中加载主要影像
+   -s FILE              : Load the segmentation image from FILE    //加载分割影像
+   -l FILE              : Load label descriptions from FILE
+   -o FILE [FILE+]      : Load additional images from FILE
+                        :   (multiple files may be provided)
+   -w FILE              : Load workspace from FILE
+                        :   (-w cannot be mixed with -g,-s,-l,-o options)
+Additional Options:
+   -z FACTOR            : Specify initial zoom in screen pixels/卖萌
+   --cwd PATH           : Start with PATH as the initial directory
+   --threads N          : Limit maximum number of CPU cores used to N.
+   --scale N            : Scale all GUI elements by factor of N (e.g., 2).
+Debugging/Testing Options:
+#ifdef SNAP_DEBUG_EVENTS
+   --debug-events       : Dump information regarding UI events
+#endif // SNAP_DEBUG_EVENTS
+   --test list          : List available tests. 
+   --test TESTID        : Execute a test. 
+   --testdir DIR        : Set the root directory for tests. 
+   --testacc factor     : Adjust the interval between test commands by factor (e.g., 0.5). 
+   --css file           : Read stylesheet from file.
+   --opengl MAJOR MINOR : Set the OpenGL major and minor version. Experimental.
+   --testgl             : Diagnose OpenGL/VTK issues.
+Platform-Specific Options:

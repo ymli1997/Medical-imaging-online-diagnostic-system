@@ -1,0 +1,543 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E94F2A6E-FC47-439D-BE35-1142450B5A3F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CloudEyes</RootNamespace>
+    <AssemblyName>CloudEyes</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar.Design">
+      <HintPath>..\External\DevComponents.DotNetBar.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Keyboard">
+      <HintPath>..\External\DevComponents.DotNetBar.Keyboard.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Layout">
+      <HintPath>..\External\DevComponents.DotNetBar.Layout.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Layout.Design">
+      <HintPath>..\External\DevComponents.DotNetBar.Layout.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Schedule">
+      <HintPath>..\External\DevComponents.DotNetBar.Schedule.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.SuperGrid">
+      <HintPath>..\External\DevComponents.DotNetBar.SuperGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2">
+      <HintPath>..\External\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.Instrumentation">
+      <HintPath>..\External\DevComponents.Instrumentation.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.Instrumentation.Design">
+      <HintPath>..\External\DevComponents.Instrumentation.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.SuperGrid.Design">
+      <HintPath>..\External\DevComponents.SuperGrid.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.TreeGX">
+      <HintPath>..\External\DevComponents.TreeGX.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\External\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleITKCSharpManaged">
+      <HintPath>..\External\SimpleITKCSharpManaged.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZedGraph">
+      <HintPath>..\External\ZedGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\FormSettingHelper.cs" />
+    <Compile Include="Business\PointsHelper.cs" />
+    <Compile Include="Business\ReportHelper.cs" />
+    <Compile Include="Entity\Consultation.cs" />
+    <Compile Include="Entity\Reports.cs" />
+    <Compile Include="Entity\UserInfo.cs" />
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ClientCloudEyesServer\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SqlHelper.cs" />
+    <Compile Include="SystemConfiguration.cs" />
+    <Compile Include="UI\Configuration\FormSystemSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Configuration\FormSystemSetting.Designer.cs">
+      <DependentUpon>FormSystemSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\File\FormDBExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\File\FormDBExport.designer.cs">
+      <DependentUpon>FormDBExport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Help\FormAboutThis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Help\FormAboutThis.designer.cs">
+      <DependentUpon>FormAboutThis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Tabs\FormConsultation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Tabs\FormConsultation.Designer.cs">
+      <DependentUpon>FormConsultation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Tabs\FormReportQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Tabs\FormReportQuery.Designer.cs">
+      <DependentUpon>FormReportQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Tabs\HotKey.cs" />
+    <Compile Include="UI\Tabs\Screenshot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Tabs\Screenshot.Designer.cs">
+      <DependentUpon>Screenshot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Tools\FormDicomUpload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Tools\FormDicomUpload.Designer.cs">
+      <DependentUpon>FormDicomUpload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Tools\FormDicomDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Tools\FormDicomDisplay.Designer.cs">
+      <DependentUpon>FormDicomDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Tabs\FormTabBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Tabs\TabTypes.cs" />
+    <Compile Include="UI\Tools\FormFileTransfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Tools\FormFileTransfer.designer.cs">
+      <DependentUpon>FormFileTransfer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Tools\Headers.cs" />
+    <Compile Include="UI\Tools\Listener.cs" />
+    <Compile Include="UI\Tools\PacketIO.cs" />
+    <Compile Include="UI\Tools\TransferClient.cs" />
+    <Compile Include="UI\Tools\TransferQueue.cs" />
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UI\Configuration\FormSystemSetting.resx">
+      <DependentUpon>FormSystemSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\File\FormDBExport.resx">
+      <DependentUpon>FormDBExport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Help\FormAboutThis.resx">
+      <DependentUpon>FormAboutThis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Tabs\FormConsultation.resx">
+      <DependentUpon>FormConsultation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Tabs\FormReportQuery.resx">
+      <DependentUpon>FormReportQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Tabs\Screenshot.resx">
+      <DependentUpon>Screenshot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Tools\FormDicomUpload.resx">
+      <DependentUpon>FormDicomUpload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Tools\FormDicomDisplay.resx">
+      <DependentUpon>FormDicomDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Tabs\FormTabBase.resx">
+      <DependentUpon>FormTabBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Tools\FormFileTransfer.resx">
+      <DependentUpon>FormFileTransfer.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\ClientCloudEyesServer\CloudEyes.ClientCloudEyesServer.DownloadFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ClientCloudEyesServer\CloudEyes.ClientCloudEyesServer.UploadFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ClientCloudEyesServer\CloudEyes.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\cursor.cur" />
+    <Content Include="Images\info.png" />
+    <Content Include="Images\Maps\a.jpg" />
+    <Content Include="Images\Maps\b.jpg" />
+    <Content Include="Images\Spare\add.png" />
+    <Content Include="Images\Spare\Alert.png" />
+    <Content Include="Images\Spare\attention-folder.png" />
+    <Content Include="Images\Spare\attention.png" />
+    <Content Include="Images\Spare\away.png" />
+    <Content Include="Images\Spare\back.png" />
+    <Content Include="Images\Spare\backward.png" />
+    <Content Include="Images\Spare\backward2.png" />
+    <Content Include="Images\Spare\basket.png" />
+    <Content Include="Images\Spare\binocular2.png" />
+    <Content Include="Images\Spare\binocular3.png" />
+    <Content Include="Images\Spare\binucolar.png" />
+    <Content Include="Images\Spare\board.png" />
+    <Content Include="Images\Spare\cal.png" />
+    <Content Include="Images\Spare\calendar.png" />
+    <Content Include="Images\Spare\camera.png" />
+    <Content Include="Images\Spare\capture.png" />
+    <Content Include="Images\Spare\card.png" />
+    <Content Include="Images\Spare\clip.png" />
+    <Content Include="Images\Spare\clock-file.png" />
+    <Content Include="Images\Spare\clock-settings.png" />
+    <Content Include="Images\Spare\clock.png" />
+    <Content Include="Images\Spare\conf.png" />
+    <Content Include="Images\Spare\copy.png" />
+    <Content Include="Images\Spare\correct.png" />
+    <Content Include="Images\Spare\cube1.png" />
+    <Content Include="Images\Spare\cube2.png" />
+    <Content Include="Images\Spare\cube3.png" />
+    <Content Include="Images\Spare\danger.png" />
+    <Content Include="Images\Spare\database.png" />
+    <Content Include="Images\Spare\database2.png" />
+    <Content Include="Images\Spare\delete-folder.png" />
+    <Content Include="Images\Spare\disc.png" />
+    <Content Include="Images\Spare\disk2.png" />
+    <Content Include="Images\Spare\Diskete.png" />
+    <Content Include="Images\Spare\disks.png" />
+    <Content Include="Images\Spare\down.png" />
+    <Content Include="Images\Spare\email-current.png" />
+    <Content Include="Images\Spare\email-global.png" />
+    <Content Include="Images\Spare\email.png" />
+    <Content Include="Images\Spare\enclosed-email.png" />
+    <Content Include="Images\Spare\error.png" />
+    <Content Include="Images\Spare\error2.png" />
+    <Content Include="Images\Spare\export.png" />
+    <Content Include="Images\Spare\export2.png" />
+    <Content Include="Images\Spare\factory.png" />
+    <Content Include="Images\Spare\file.png" />
+    <Content Include="Images\Spare\folder.png" />
+    <Content Include="Images\Spare\folder3.png" />
+    <Content Include="Images\Spare\folderClock.png" />
+    <Content Include="Images\Spare\folders.png" />
+    <Content Include="Images\Spare\foward.png" />
+    <Content Include="Images\Spare\foward2.png" />
+    <Content Include="Images\Spare\front.png" />
+    <Content Include="Images\Spare\gear.png" />
+    <Content Include="Images\Spare\gears.png" />
+    <Content Include="Images\Spare\generic.png" />
+    <Content Include="Images\Spare\Generic2.png" />
+    <Content Include="Images\Spare\globo.png" />
+    <Content Include="Images\Spare\hd1.png" />
+    <Content Include="Images\Spare\hd2.png" />
+    <Content Include="Images\Spare\hd3.png" />
+    <Content Include="Images\Spare\house 2.png" />
+    <Content Include="Images\Spare\House 3.png" />
+    <Content Include="Images\Spare\House.png" />
+    <Content Include="Images\Spare\house4.png" />
+    <Content Include="Images\Spare\ima.png" />
+    <Content Include="Images\Spare\imac.png" />
+    <Content Include="Images\Spare\imac2.png" />
+    <Content Include="Images\Spare\image.png" />
+    <Content Include="Images\Spare\info.png" />
+    <Content Include="Images\Spare\key.png" />
+    <Content Include="Images\Spare\ladybug.png" />
+    <Content Include="Images\Spare\locked.png" />
+    <Content Include="Images\Spare\mac-window.png" />
+    <Content Include="Images\Spare\new-folder.png" />
+    <Content Include="Images\Spare\padlocke.png" />
+    <Content Include="Images\Spare\padlocke2.png" />
+    <Content Include="Images\Spare\peace.png" />
+    <Content Include="Images\Spare\personal-folder.png" />
+    <Content Include="Images\Spare\personal-folder2.png" />
+    <Content Include="Images\Spare\plan.png" />
+    <Content Include="Images\Spare\print-preview.png" />
+    <Content Include="Images\Spare\printer.png" />
+    <Content Include="Images\Spare\pro.png" />
+    <Content Include="Images\Spare\pro2.png" />
+    <Content Include="Images\Spare\project1.png" />
+    <Content Include="Images\Spare\quest.png" />
+    <Content Include="Images\Spare\reg.png" />
+    <Content Include="Images\Spare\save.png" />
+    <Content Include="Images\Spare\scissors.png" />
+    <Content Include="Images\Spare\send.png" />
+    <Content Include="Images\Spare\shared.png" />
+    <Content Include="Images\Spare\Spare1\calculator.png" />
+    <Content Include="Images\Spare\Spare1\gimp.png" />
+    <Content Include="Images\Spare\Spare1\help2.png" />
+    <Content Include="Images\Spare\Spare1\ligth-on.png" />
+    <Content Include="Images\Spare\Spare1\question.png" />
+    <Content Include="Images\Spare\Spare1\radar.png" />
+    <Content Include="Images\Spare\Spare1\redo.png" />
+    <Content Include="Images\Spare\Spare1\refresh.png" />
+    <Content Include="Images\Spare\Spare1\reload-alt.png" />
+    <Content Include="Images\Spare\Spare1\reload-cycle.png" />
+    <Content Include="Images\Spare\Spare1\reload.png" />
+    <Content Include="Images\Spare\Spare1\statistic.png" />
+    <Content Include="Images\Spare\Spare1\undo.png" />
+    <Content Include="Images\Spare\Spare1\view_left_right.png" />
+    <Content Include="Images\Spare\Spare1\view_top_bottom.png" />
+    <Content Include="Images\Spare\startup-folder.png" />
+    <Content Include="Images\Spare\statistics.png" />
+    <Content Include="Images\Spare\suport.png" />
+    <Content Include="Images\Spare\suportfile.png" />
+    <Content Include="Images\Spare\support1.png" />
+    <Content Include="Images\Spare\support2.png" />
+    <Content Include="Images\Spare\support3.png" />
+    <Content Include="Images\Spare\sure.png" />
+    <Content Include="Images\Spare\swipe-machine.png" />
+    <Content Include="Images\Spare\time.png" />
+    <Content Include="Images\Spare\top-gear.png" />
+    <Content Include="Images\Spare\trash-full.png" />
+    <Content Include="Images\Spare\trash.png" />
+    <Content Include="Images\Spare\unknow.png" />
+    <Content Include="Images\Spare\unknown-folder.png" />
+    <Content Include="Images\Spare\up.png" />
+    <Content Include="Images\Spare\user.png" />
+    <Content Include="Images\Spare\usersuport.png" />
+    <Content Include="Images\Spare\view-file.png" />
+    <Content Include="Images\Spare\view.png" />
+    <Content Include="Images\Spare\view2.png" />
+    <Content Include="Images\Spare\web-file.png" />
+    <Content Include="Images\Spare\window-cascade.png" />
+    <Content Include="Images\Spare\window-maximize.png" />
+    <Content Include="Images\Spare\window-minimize.png" />
+    <Content Include="Images\Spare\window-side-by-side.png" />
+    <Content Include="Images\Spare\window-vertical.png" />
+    <Content Include="Images\Spare\window.png" />
+    <Content Include="Images\Spare\zoom-less.png" />
+    <Content Include="Images\Spare\zoom-more.png" />
+    <Content Include="Images\ToolbarForMain\0ConnectToProject.png" />
+    <Content Include="Images\ToolbarForMain\10About.png" />
+    <Content Include="Images\ToolbarForMain\1PrintPreview.png" />
+    <Content Include="Images\ToolbarForMain\2Print.png" />
+    <Content Include="Images\ToolbarForMain\3Copy.png" />
+    <Content Include="Images\ToolbarForMain\4Refresh.png" />
+    <Content Include="Images\ToolbarForMain\5TimePeriod.png" />
+    <Content Include="Images\ToolbarForMain\6ChartOption.png" />
+    <Content Include="Images\ToolbarForMain\7SystemOption.png" />
+    <Content Include="Images\ToolbarForMain\8Calculator.png" />
+    <Content Include="Images\ToolbarForMain\9HelpTopic.png" />
+    <Content Include="Images\ToolbarFormChartTabBase\0ExportPic.png" />
+    <Content Include="Images\ToolbarFormChartTabBase\10ChartOption.png" />
+    <Content Include="Images\ToolbarFormChartTabBase\11-1up.png" />
+    <Content Include="Images\ToolbarFormChartTabBase\11-2down.png" />
+    <Content Include="Images\ToolbarFormChartTabBase\11-3Left.png" />
+    <Content Include="Images\ToolbarFormChartTabBase\11-4Right.png" />
+    <Content Include="Images\ToolbarFormChartTabBase\11MOve.png" />
+    <Content Include="Images\ToolbarFormChartTabBase\1ExportDt2Excel.png" />
+    <Content Include="Images\ToolbarFormChartTabBase\1zoom-more.png" />
+    <Content Include="Images\ToolbarFormChartTabBase\2DataProcessing.png" />
+    <Content Include="Images\ToolbarFormChartTabBase\2zoom-less.png" />
+    <Content Include="Images\ToolbarFormChartTabBase\3ChartType.png" />
+    <Content Include="Images\ToolbarFormChartTabBase\4Palette.png" />
+    <Content Include="Images\ToolbarFormChartTabBase\5MajorGridX.png" />
+    <Content Include="Images\ToolbarFormChartTabBase\6MajorGridY.png" />
+    <Content Include="Images\ToolbarFormChartTabBase\7Legend.png" />
+    <Content Include="Images\ToolbarFormChartTabBase\8Zoom.png" />
+    <Content Include="Images\ToolbarFormChartTabBase\9Reset.png" />
+    <Content Include="Images\ToolbarFormChartTabBase\BarChart.png" />
+    <Content Include="Images\ToolbarFormChartTabBase\Cricle.png" />
+    <Content Include="Images\ToolbarFormChartTabBase\Default.png" />
+    <Content Include="Images\ToolbarFormChartTabBase\Diamond.png" />
+    <Content Include="Images\ToolbarFormChartTabBase\HDash.png" />
+    <Content Include="Images\ToolbarFormChartTabBase\LineChart.png" />
+    <Content Include="Images\ToolbarFormChartTabBase\LineSymbolStyle.png" />
+    <Content Include="Images\ToolbarFormChartTabBase\None.png" />
+    <Content Include="Images\ToolbarFormChartTabBase\PieChart.png" />
+    <Content Include="Images\ToolbarFormChartTabBase\Plus.png" />
+    <Content Include="Images\ToolbarFormChartTabBase\Square.png" />
+    <Content Include="Images\ToolbarFormChartTabBase\Star.png" />
+    <Content Include="Images\ToolbarFormChartTabBase\Triangle.png" />
+    <Content Include="Images\ToolbarFormChartTabBase\TriangleDown.png" />
+    <Content Include="Images\ToolbarFormChartTabBase\UserDefined.png" />
+    <Content Include="Images\ToolbarFormChartTabBase\VDash.png" />
+    <Content Include="Images\ToolbarFormChartTabBase\XCross.png" />
+    <Content Include="Images\ToolbarFormDailyReport\0SystemOption.png" />
+    <Content Include="Images\ToolbarFormDailyReport\1ChartOption.png" />
+    <Content Include="Images\ToolbarFormDailyReport\2ExportDt2Excel.png" />
+    <Content Include="Images\ToolbarFormDailyReport\3ConnectToProject.png" />
+    <Content Include="Images\ToolbarFormDailyReport\clock-file.png" />
+    <Content Include="Images\ToolbarFormDailyReport\export2.png" />
+    <Content Include="Images\ToolbarFormDailyReport\view2.png" />
+    <Content Include="Images\ToolbarFormSiteMapImage\0ExportPic.png" />
+    <Content Include="Images\ToolbarFormSiteMapImage\10undo.png" />
+    <Content Include="Images\ToolbarFormSiteMapImage\11reundo.png" />
+    <Content Include="Images\ToolbarFormSiteMapImage\1zoom-more.png" />
+    <Content Include="Images\ToolbarFormSiteMapImage\2zoom-less.png" />
+    <Content Include="Images\ToolbarFormSiteMapImage\3view-file.png" />
+    <Content Include="Images\ToolbarFormSiteMapImage\4MOve.png" />
+    <Content Include="Images\ToolbarFormSiteMapImage\5folder.png" />
+    <Content Include="Images\ToolbarFormSiteMapImage\6Palette.png" />
+    <Content Include="Images\ToolbarFormSiteMapImage\7saveDataBase.png" />
+    <Content Include="Images\ToolbarFormSiteMapImage\8folder.png" />
+    <Content Include="Images\ToolbarFormSiteMapImage\9delete.png" />
+    <Content Include="Images\ToolbarFormSiteMapImage\check.png" />
+    <Content Include="Images\ToolbarFormSiteMapImage\cursor.cur" />
+    <Content Include="Images\ToolbarFormSiteMapImage\error.png" />
+    <Content Include="Images\ToolbarFormSiteMap\0ExportPic.png" />
+    <Content Include="Images\ToolbarFormSiteMap\1zoom-more.png" />
+    <Content Include="Images\ToolbarFormSiteMap\2zoom-less.png" />
+    <Content Include="Images\ToolbarFormSiteMap\3view-file.png" />
+    <Content Include="Images\ToolbarFormSiteMap\4MOve.png" />
+    <Content Include="Images\ToolbarFormSiteMap\5MajorGridX.png" />
+    <Content Include="Images\ToolbarFormSiteMap\6MajorGridY.png" />
+    <Content Include="Images\ToolbarFormSiteMap\cursor.cur" />
+    <Content Include="Images\ToolbarFormSiteMap\node.png" />
+    <Content Include="Images\ToolbarFormSiteMap\node0.png" />
+    <Content Include="Images\ToolbarFormSiteMap\node1.png" />
+    <Content Include="Images\ToolbarFormSiteMap\node10.png" />
+    <Content Include="Images\ToolbarFormSiteMap\node11.png" />
+    <Content Include="Images\ToolbarFormSiteMap\node2.png" />
+    <Content Include="Images\ToolbarFormSiteMap\node3.png" />
+    <Content Include="Images\ToolbarFormSiteMap\node4.png" />
+    <Content Include="Images\ToolbarFormSiteMap\node5.png" />
+    <Content Include="Images\ToolbarFormSiteMap\node6.png" />
+    <Content Include="Images\ToolbarFormSiteMap\node7.png" />
+    <Content Include="Images\ToolbarFormSiteMap\node8.png" />
+    <Content Include="Images\ToolbarFormSiteMap\node9.png" />
+    <Content Include="Images\ToolbarFormVector\0ExportPic.png" />
+    <Content Include="Images\ToolbarFormVector\1zoom-more.png" />
+    <Content Include="Images\ToolbarFormVector\2zoom-less.png" />
+    <Content Include="Images\ToolbarFormVector\3view-file.png" />
+    <Content Include="Images\ToolbarFormVector\4MajorGridX.png" />
+    <Content Include="Images\ToolbarFormVector\5MajorGridY.png" />
+    <Content Include="Images\ToolBarPrediction\0ExportDt2Excel.png" />
+    <Content Include="Images\ToolBarPrediction\1DataProcessing.png" />
+    <Content Include="Images\ToolBarPrediction\2Reset.png" />
+    <Content Include="Images\ToolBarPrediction\3calculator.png" />
+    <Content Include="Images\ToolBarPrediction\4saveDataBase.png" />
+    <Content Include="Images\ToolBarPrediction\peace.png" />
+    <None Include="Service References\ClientCloudEyesServer\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ClientCloudEyesServer\configuration.svcinfo" />
+    <None Include="Service References\ClientCloudEyesServer\configuration91.svcinfo" />
+    <None Include="Service References\ClientCloudEyesServer\CloudEyes.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CloudEyesFileTranferServices\CloudEyesFileTranferServices.csproj">
+      <Project>{497268f7-9300-446f-b4d4-6545dbdeaa06}</Project>
+      <Name>CloudEyesFileTranferServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DicomViewer\DicomViewer.csproj">
+      <Project>{b060ee96-11f5-419f-8aa7-4800bc0d750f}</Project>
+      <Name>DicomViewer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rising.Utilities\Rising.Utilities.csproj">
+      <Project>{9d0e628c-5d06-4e2a-9403-e7acca212cb6}</Project>
+      <Name>Rising.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ClientCloudEyesServer\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
